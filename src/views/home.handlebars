@@ -1,0 +1,63 @@
+<div class="content">
+    <div class="tabla">
+      <header class="Cabecera">
+        <h3>Tabla de productos</h3>
+        </header>
+    <table>
+      <thead>
+        <tr>
+          <th> Nombre de producto </th>
+          <th>Descripción</th>
+          <th>Precio unitario</th>
+          <th>Codigo</th>
+          <th>Stock de producto </th>
+          <th>Categoria </th>
+        </tr>
+      </thead>       
+
+      <tbody>
+        {{#each productos}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{this.category}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    </div>
+
+  <div class="formulario">
+    		<form action="" method="POST">
+      <div id="formulario"> 
+        <h1> FORMULARIO </h1>
+      </div>
+        
+			<div id="tabla-formulario">
+        <label for="nombre">Nombre</label>
+				<input placeholder="Ingrese nombre..." name="nombre" type="text"     id="tabla">
+        
+        <label for="descripción">Descripción</label>
+				<input placeholder="Ingrese su descripción..." name="descripcion" type="text" id="tabla">
+
+        <label for="precio">Ingrese precio unitario </label>
+				<input placeholder="Ingrese precio unitario" name="precio" type="number" id="tabla">
+
+        <label for="codigo">Codigo</label>
+				<input placeholder="Escriba codigo" name="codigo" type="text" id="tabla">
+
+        <label for="stock">Stock </label>
+				<input placeholder="Stock" name="stock" type="number" id="tabla">
+
+        <label for="categoria">Categoria</label>
+				<input placeholder="Escriba categoria" name="categoria" type="text" id="tabla">
+			</div>
+			  <button name="registro" type="submit" id="button"> ¡Enviar! </button>
+		</form>
+  </div>
+</div>
+
+    
