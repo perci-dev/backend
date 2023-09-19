@@ -1,0 +1,64 @@
+<div class="content">
+    <div class="tabla">
+      <header class="Cabecera">
+        <h3>Tabla de productos</h3>
+        </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre de producto </th>
+          <th>Descripción</th>
+          <th>Precio unitario</th>
+          <th>Codigo</th>
+          <th>Stock de producto </th>
+          <th>Categoria </th>
+        </tr>
+      </thead>       
+
+      <tbody>
+        {{#each productos}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{this.category}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    </div>
+
+ <div class="formulario">
+  	<form  method="POST">
+      <div id="formulario"> 
+        <h1> FORMULARIO </h1>
+      </div>
+        
+			<div id="tabla-formulario">
+        <label for="title">Nombre</label>
+				<input placeholder="Ingrese nombre..." name="title" type="text"     id="nombre">
+        
+        <label for="description">Descripción</label>
+				<input placeholder="Ingrese su descripción..." name="description" type="text" id="descripcion">
+
+        <label for="price">Ingrese precio unitario </label>
+				<input placeholder="Ingrese precio unitario" name="price" type="number" id="precio">
+
+        <label for="code">Codigo</label>
+				<input placeholder="Escriba codigo" name="code" type="text" id="codigo">
+
+        <label for="stock">Stock </label>
+				<input placeholder="Stock" name="stock" type="number" id="stock">
+
+        <label for="category">Categoria</label>
+				<input placeholder="Escriba categoria" name="category" type="text" id="categoria">
+			</div>
+			  <button  id="btn-send" onclick="enviarProducto(e)"> ¡Enviar! </button>
+		</form>
+  </div>
+</div>
+</div>
+
+    

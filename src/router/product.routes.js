@@ -4,7 +4,7 @@ const ProductRouter = Router();
 const product = new ProductManager();
 
 ProductRouter.get("/", async(req, res) =>{
-    res.render("home", {
+    res.render("realtimeProducts", {
         title: "websocket/ Handlebars",
         productos : await product.getProducts()
     })
@@ -30,6 +30,7 @@ ProductRouter.get("/:id", async(req, res) =>{
 
 ProductRouter.post("/", async (req, res) => {
     let newProduct = req.body;
+    //res.send(newProduct)
     
     // Validamos que se proporcionen todos los campos
     if (
@@ -37,7 +38,7 @@ ProductRouter.post("/", async (req, res) => {
         !newProduct.price ||
         !newProduct.description ||
         !newProduct.code ||
-        !newProduct.estatus ||
+        /*!newProduct.estatus ||*/
         !newProduct.stock ||
         !newProduct.category ) {
         return res.status(400).json({ error: 'Debe proporcionar todos los campos .' });

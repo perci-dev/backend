@@ -35,6 +35,11 @@ class ProductManager {
         return "Producto agregado"
     };
 
+   
+  // Crea una instancia de Socket.io en el cliente
+  
+
+
     getProducts = async () =>{
         return await this.readProducts()
     };

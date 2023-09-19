@@ -8,5 +8,37 @@
 </head>
 <body>
     {{{body}}}
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+<script>
+    const socket = io();
+
+  function enviarProducto(e) {
+    // Obtiene los valores de los campos del formulario
+    e.preventDefault();
+    const title = document.getElementById("nombre").value;
+    const description = document.getElementById("descripcion").value;
+    const price = document.getElementById("precio").value;
+    const code = document.getElementById("codigo").value;
+    const stock = document.getElementById("stock").value;
+    const category = document.getElementById("categoria").value;
+
+    // Crea un objeto con los datos del producto
+    const producto = {
+      title:title,
+      description:description,
+      price:price,
+      code:code,
+      stock:stock,
+      category:category
+    };
+
+console.log(producto)
+    // Envía el objeto producto a través de Socket.io
+    socket.emit("productoEnviado", producto);
+
+}
+</script>
 </body>
 </html>
